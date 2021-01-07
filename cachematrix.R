@@ -2,16 +2,18 @@
 ## functions do
 
 ## Write a short comment describing this function
+#pair of functions that cache the inverse of a matrix
+
 library(MASS) #to solve for inverse of both squared and non squared matrices 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) { #makeCacheMatrix consists of set, inv, setinv, and get inv
   inv<-NULL #to set inverse as NULL
   set<-function(y){
     x<<-y
     inv<<-NULL
   }
   get<-function()x #to get matrix x
-  setinv<-function(inverse)inv<<-inverse
-  getinv<-funciton(){
+  setinv <- function(inverse) {inv <<- inverse}
+  getinv <- function() {
     inver<-ginv(x)
     inver%*%x #to get inverse of matrix
   }
